@@ -72,11 +72,13 @@ Resultado: Nao possui raizes reais.
 
 ### Teste 3
 Trata-se de uma formula de bhaskara com os valores (1, 2, -15).  
-Resultado:  
+Resultado:
+```
 {  
 "I": 3,  
 "II": -5  
 }
+```
 
 ### Teste 4
 Trata-se de uma analise de dados de uma lista, arquivo data.json.
