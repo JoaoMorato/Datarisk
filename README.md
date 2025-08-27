@@ -1,6 +1,6 @@
 # Caso Pratico Datarisk
 
-Este e um projeto desenvolvido como Caso Pratico a Datarisk.
+Este e um projeto desenvolvido como Caso Pratico para a Datarisk.
 
 ## Passos iniciais
 
