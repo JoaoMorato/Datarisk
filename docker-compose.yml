@@ -1,0 +1,60 @@
+services:
+  api:
+    image: ${DOCKER_REGISTRY-}datarisk
+    build:
+      context: .
+      dockerfile: Datarisk/Dockerfile
+    volumes:
+      - shared-data:/app/data
+    container_name: "api-service"
+    ports:
+      - "7000:80"
+    depends_on:
+      rabbitmq:
+        condition: service_healthy
+      postgresql:
+        condition: service_healthy
+
+  executor:
+    image: ${DOCKER_REGISTRY-}executor
+    build:
+      context: .
+      dockerfile: Executor/Dockerfile
+    container_name: "executor-service"
+    depends_on:
+      rabbitmq:
+        condition: service_healthy 
+    volumes:
+      - shared-data:/app/data
+  
+  rabbitmq:
+    image: rabbitmq:4
+    container_name: rabbitmq-service
+    expose:
+      - "5672"
+    environment:
+      - RABBITMQ_DEFAULT_USER=guest
+      - RABBITMQ_DEFAULT_PASS=guest
+    healthcheck:
+      test: ["CMD", "rabbitmq-diagnostics", "check_port_connectivity"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  postgresql:
+    image: postgres:16
+    container_name: postgres-service
+    expose:
+      - "5432"
+    environment:
+      - POSTGRES_DB=datarisk
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=123456
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres -d datarisk"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+volumes:
+  shared-data:
