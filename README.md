@@ -1,6 +1,6 @@
 # Caso Pratico Datarisk
 
-Este e um projeto desenvolvido para a Datarisk.
+Este e um projeto desenvolvido como Caso Pratico a Datarisk.
 
 ## Passos iniciais
 
@@ -75,8 +75,8 @@ Trata-se de uma formula de bhaskara com os valores (1, 2, -15).
 Resultado:
 ```
 {  
-"I": 3,  
-"II": -5  
+  "I": 3,  
+  "II": -5  
 }
 ```
 
