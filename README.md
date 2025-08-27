@@ -4,8 +4,6 @@ Este e um projeto desenvolvido como Caso Pratico para a Datarisk.
 
 ## Passos iniciais
 
-Executar arquivos .bat para Windows e .sh para Linux
-
 Executar o comando <code>docker compose up --build -d</code> na pasta do respositorio.  
 Apos o termino da execucao do script, a API deve estar rodando na porta 7000, para ter acesso a documentacao
 acessar a rota <http://localhost:7000/swagger/index.html>
