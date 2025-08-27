@@ -13,12 +13,14 @@ acessar a rota <http://localhost:7000/swagger/index.html>
 ## Documentacao
 
 Modelo base de resposta:  
+```
 {  
-"Information": "Qualquer informacao adicional",  
-"Data": "Qualquer tipo de dado de resposta (nao precisa ser necessariamente uma string), pode ser nulo",  
-"Errors": ["Lista com erros durante execucao", "Pode ser nulo"],  
-"Identifier": "Identificador da requisicao"  
+  "Information": "Qualquer informacao adicional",  
+  "Data": "Qualquer tipo de dado de resposta (nao precisa ser necessariamente uma string), pode ser nulo",  
+  "Errors": ["Lista com erros durante execucao", "Pode ser nulo"],  
+  "Identifier": "Identificador da requisicao"  
 }
+```
 
 ### Execute [POST]
 
@@ -26,47 +28,47 @@ Executa uma funcao de um script com dados parametros.
 
 Response: Id para consulta em 'Execute/Status/Id' ou 'Execute/Id'
 
-### Execute/Status/@Id [GET]
+### Execute/Status/<code>Id</code> [GET]
 
-@Id: Id de execucao  
+Id: Id de execucao  
 Verifica o status de execucao do script.
 
-### Execute/@Id [GET]
+### Execute/<code>Id</code> [GET]
 
-@Id: Id de execucao  
+Id: Id de execucao  
 Retorna a resposta de uma execucao finalizada.
 
-### Script/@Nome [POST]
+### Script/<code>Nome</code> [POST]
 
-@Nome: Nome para registro do script.  
+Nome: Nome para registro do script.  
 Registra um script para analise.
 
-### Script/@Nome [GET]
+### Script/<code>Nome</code> [GET]
 
-@Nome: Nome de registro do script.  
+Nome: Nome de registro do script.  
 Retorna o script do sistema.
 
 ### Script [GET]
 
 Lista todos os scripts.
 
-### Script/Status/@Nome [GET]
+### Script/Status/<code>Nome</code> [GET]
 
-@Nome: Nome de registro do script.  
+Nome: Nome de registro do script.  
 Verifica o status de analise do script.
 
 ## Teste
 
 Cada arquivo JSON tem o body para executar o teste.  
-Certifcar-se que o arquivo 'teste' está no sistema, caso não, executar o script.(bat|sh).
+Certifcar-se que o arquivo 'teste' esta no sistema, caso nao, executar o script.(bat|sh).
 
 ### Teste 1
-Trata-se de uma sequencia fibonacci, onde deve ser retornado o 10º elemento da sequencia.  
+Trata-se de uma sequencia fibonacci, onde deve ser retornado o elemento 10 da sequencia.  
 Resultado: 55
 
 ### Teste 2
 Trata-se de uma formula de bhaskara com os valores (1, 2, 3).  
-Resultado: Não possui raízes reais.
+Resultado: Nao possui raizes reais.
 
 ### Teste 3
 Trata-se de uma formula de bhaskara com os valores (1, 2, -15).  
