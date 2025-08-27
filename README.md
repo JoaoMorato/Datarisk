@@ -59,7 +59,7 @@ Verifica o status de analise do script.
 
 ## Teste
 
-Cada arquivo JSON tem o body para executar o teste.  
+Cada arquivo JSON na pasta 'Test' tem o body para ser executado.  
 Certifcar-se que o arquivo 'teste' esta no sistema, caso nao, executar o script.(bat|sh).
 
 ### Teste 1
